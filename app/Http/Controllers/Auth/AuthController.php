@@ -3,6 +3,7 @@
 namespace Badger\Http\Controllers\Auth;
 
 use Badger\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use Badger\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -63,6 +64,12 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        if (Auth::guest()) {
+            if (!User::all()->isEmpty()) {
+                die(response('Unauthorized.', 401));
+            }
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

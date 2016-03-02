@@ -1,0 +1,17 @@
+.navbar {
+    background-color: rgba(173, 216, 250, .5);
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #666;
+}
+
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #2ca02c;
+}
+
+.panel-heading {
+    font-family: 'Open Sans', serif;
+    font-size: 24px;
+}

@@ -2,6 +2,7 @@
 
 namespace Badger\Http\Middleware;
 
+use Badger\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +22,8 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('login');
+                $users = User::all();
+                return (!$users->isEmpty() ? redirect()->guest('login') : redirect()->guest('register'));
             }
         }
 
