@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Badger\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

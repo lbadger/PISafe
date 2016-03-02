@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Badger\Events;
 
 abstract class Event
 {

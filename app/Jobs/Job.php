@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace Badger\Jobs;
 
 use Illuminate\Bus\Queueable;
 
