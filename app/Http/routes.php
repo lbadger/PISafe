@@ -34,4 +34,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'DashboardController@index');
+    Route::get('/settings', 'SettingsController@index');
+    Route::get('/monitoring', 'MonitoringController@index');
 });

@@ -2,10 +2,11 @@
 
 namespace Badger\Http\Controllers;
 
-use Badger\Http\Requests;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+use Badger\Http\Requests;
+
+class SettingsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,6 +25,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return view('settings');
     }
 }

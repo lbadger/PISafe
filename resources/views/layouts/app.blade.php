@@ -13,7 +13,9 @@
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans">
+    <link href="bootstrap-theme.css" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
 
     <style>
@@ -48,15 +50,16 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                    <li><a href="{{ url('/') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span><i class="fa fa-table"></i> Reports</span><span class="caret"></span></a>
+                            <span><i class="fa fa-area-chart"></i> Reports</span><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url('/settings') }}"><i class="fa fa-sliders"></i>&nbsp;Alarm Settings</a></li>
+                    <li><a href="{{ url('/monitoring') }}"><i class="fa fa-eye"></i>Monitoring</li></a>
+                    <li><a href="{{ url('/settings') }}"><i class="fa fa-sliders"></i>Alarm Settings</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -70,9 +73,9 @@
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/account') }}"><i class="fa fa-btn fa-cog"></i> &nbsp; My Account</a></li>
-                                <li><a href="{{ url('/users') }}"><i class="fa fa-btn fa-user"></i> &nbsp; Manage Users</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> &nbsp; Logout</a></li>
+                                <li><a href="{{ url('/account') }}"><i class="fa fa-btn fa-cog"></i>My Account</a></li>
+                                <li><a href="{{ url('/users') }}"><i class="fa fa-btn fa-user"></i>Manage Users</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
                     @endif
@@ -83,9 +86,12 @@
 
     @yield('content')
 
-    <!-- JavaScripts -->
+            <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+    @yield('page-script')
 </body>
 </html>

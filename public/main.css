@@ -1,17 +1,8 @@
-.navbar {
-    background-color: rgba(173, 216, 250, .5);
+.checkbox label span {
+    font-size: 18px;
+    padding-left: 10px;
 }
 
-.navbar-default .navbar-nav>li>a {
-    color: #666;
-}
-
-
-.navbar-default .navbar-nav>li>a:hover {
-    color: #2ca02c;
-}
-
-.panel-heading {
-    font-family: 'Open Sans', serif;
-    font-size: 24px;
+.navbar-default .navbar-nav>li>a>i {
+    padding-right: 5px;
 }
