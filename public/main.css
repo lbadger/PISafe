@@ -1,3 +1,11 @@
+body {
+    font-family: "OpenSans";
+}
+
+.navbar .navbar-nav>li>a {
+    font-size: 20px;
+}
+
 .checkbox label span {
     font-size: 18px;
     padding-left: 10px;
@@ -5,4 +13,15 @@
 
 .navbar-default .navbar-nav>li>a>i {
     padding-right: 5px;
+}
+
+.panel-body .checkbox {
+    padding: 5px;
+}
+
+.btn-block {
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
 }

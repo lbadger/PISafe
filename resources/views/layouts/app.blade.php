@@ -50,16 +50,11 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    @if (!Auth::guest())
                     <li><a href="{{ url('/') }}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <span><i class="fa fa-area-chart"></i> Reports</span><span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                        </ul>
-                    </li>
                     <li><a href="{{ url('/monitoring') }}"><i class="fa fa-eye"></i>Monitoring</li></a>
                     <li><a href="{{ url('/settings') }}"><i class="fa fa-sliders"></i>Alarm Settings</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -90,8 +85,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
+    <script type="text/javascript">
+        (function() {
+            jQuery('.toggle-switch').bootstrapSwitch('state', true);
+        })(jQuery);
+    </script>
     @yield('page-script')
 </body>
 </html>
